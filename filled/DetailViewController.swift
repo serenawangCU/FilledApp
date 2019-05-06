@@ -135,7 +135,13 @@ weak var helikedelegate : ChangelikeDelegate?
     }
     @objc func popchat(){
         AudioServicesPlaySystemSound(1000);
-        UserNetworkManager.createchat(homeuserid: homeperson.id, guestuserid: guestperson.id) { () in
+        var firstid = homeperson.id
+        var secondid = guestperson.id
+        if homeperson.id > guestperson.id{
+            firstid = guestperson.id
+            secondid = homeperson.id
+        }
+        UserNetworkManager.createchat(id1:firstid, id2:secondid) { () in
             
         }
         let chatview = ChatViewController(homeuser: homeperson, guestuser: guestperson)

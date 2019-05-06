@@ -68,10 +68,10 @@ class UserNetworkManager {
     }
     
 
-    static func getMessage(homeuserid: Int, guestuserid: Int,completion: @escaping (messages) -> Void) {
+    static func getMessage(id1: Int, id2: Int,completion: @escaping (messages) -> Void) {
         let parameters: [String: Any] = [
-            "user_id1": homeuserid,
-            "user_id2": guestuserid
+            "user_id1": id1,
+            "user_id2": id2
             
         ]
         Alamofire.request(messageURL, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: [:]).validate().responseData { (response) in
@@ -92,10 +92,10 @@ class UserNetworkManager {
             }
         }
     }
-    static func createchat(homeuserid: Int, guestuserid: Int,completion: @escaping () -> Void) {
+    static func createchat(id1: Int, id2: Int,completion: @escaping () -> Void) {
         let parameters: [String: Any] = [
-            "user_id1": homeuserid,
-            "user_id2": guestuserid
+            "user_id1": id1,
+            "user_id2": id2
            
         ]
         Alamofire.request( createchatURL, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: [:]).validate().responseData { (response) in
@@ -113,8 +113,8 @@ class UserNetworkManager {
             }
         }
     }
-    static func updateMessage(homeuserid: Int, guestuserid: Int, addingmessage: message, completion: @escaping () -> Void) {
-        let parameter:[String: Any] = ["user_id1" :homeuserid, "user_id2" : guestuserid, "text" : addingmessage.chat, "sender_id": homeuserid]
+    static func updateMessage(id1: Int, id2: Int, sender: Int,addingmessage: message, completion: @escaping () -> Void) {
+        let parameter:[String: Any] = ["user_id1" :id1, "user_id2" : id2, "text" : addingmessage.chat, "sender_id": sender]
         Alamofire.request(updatemessageURL, method: .post, parameters: parameter, encoding: JSONEncoding.default, headers: [:]).validate().responseData { (response) in
             switch response.result {
             case .success(let data):

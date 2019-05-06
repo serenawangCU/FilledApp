@@ -33,7 +33,13 @@ class ChatViewController: UIViewController {
         view.backgroundColor = .white
         super.viewDidLoad()
         self.title = "chat"
-        UserNetworkManager.getMessage(homeuserid: homeuser.id, guestuserid: guestuser.id, completion: { (messages) in
+        var firstid = homeuser.id
+        var secondid = guestuser.id
+        if homeuser.id > guestuser.id{
+            firstid = guestuser.id
+            secondid = homeuser.id
+        }
+        UserNetworkManager.getMessage(id1:firstid, id2:secondid, completion: { (messages) in
             self.chatlist = messages.data
             self.chattableview.reloadData()
 
@@ -86,7 +92,13 @@ var  timer = Timer.scheduledTimer(timeInterval: 20, target: self, selector: #sel
                 AudioServicesPlaySystemSound(1001)
                 let thismessage = message(chat: thischat, id: homeuser.id)
                 self.chatlist.append(thismessage)
-                UserNetworkManager.updateMessage(homeuserid: homeuser.id, guestuserid: guestuser.id, addingmessage: thismessage) {
+                var firstid = homeuser.id
+                var secondid = guestuser.id
+                if homeuser.id > guestuser.id{
+                    firstid = guestuser.id
+                    secondid = homeuser.id
+                }
+                UserNetworkManager.updateMessage(id1:firstid, id2:secondid,sender: homeuser.id, addingmessage: thismessage) {
                     
                 }
                 self.chattableview.reloadData()
@@ -95,8 +107,13 @@ var  timer = Timer.scheduledTimer(timeInterval: 20, target: self, selector: #sel
         }
     }
     @objc func getMessage(){
-        
-        UserNetworkManager.getMessage(homeuserid: homeuser.id, guestuserid: guestuser.id) { (messages) in
+        var firstid = homeuser.id
+        var secondid = guestuser.id
+        if homeuser.id > guestuser.id{
+            firstid = guestuser.id
+            secondid = homeuser.id
+        }
+        UserNetworkManager.getMessage(id1: firstid, id2: secondid) { (messages) in
             self.chatlist = messages.data
             self.chattableview.reloadData()
         }
