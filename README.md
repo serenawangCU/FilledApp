@@ -12,6 +12,8 @@
 ### please use the zip version for ios xworkspace and xproject.
 ### Already existed users: username and password are both 1,2,..6 (6 usres). Everytime a user log in/ sign up, random 5 users are pulled from the data base. Right now they are all blank, but if user change information, next time the user appearance will be changed.
 
+### In the collection of users, each user can be clicked, which will pop up a view contains information about the user and button to chat and like.
+
 ### iOS
 
 ### TableView is used to display messages sent between different users, and image picker is used to grab an image from either the gallery or the camera. Collectionview cells are used to display different users, and AVfoundation is used to play sound.
