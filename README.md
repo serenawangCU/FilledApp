@@ -1,6 +1,6 @@
 # Filled
 ## A dating app helps users to find love
-### (link)
+
 ### Screen shots 
 
 <img src = "https://github.com/serenawangCU/FilledApp/blob/master/Screenshots/pic4.jpg" width= "250"><img src = "https://github.com/serenawangCU/FilledApp/blob/master/Screenshots/pic2.jpg" width= "250"><img src = "https://github.com/serenawangCU/FilledApp/blob/master/Screenshots/pic1.jpg" width= "250"><img src = "https://github.com/serenawangCU/FilledApp/blob/master/Screenshots/pic3.jpg" width= "250">
