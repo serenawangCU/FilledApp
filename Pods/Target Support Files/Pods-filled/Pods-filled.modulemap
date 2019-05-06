@@ -1,0 +1,6 @@
+framework module Pods_filled {
+  umbrella header "Pods-filled-umbrella.h"
+
+  export *
+  module * { export * }
+}
