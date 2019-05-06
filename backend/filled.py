@@ -16,7 +16,7 @@ with app.app_context():
 
 @app.route('/')
 def showOff():
-    return 'FILLED! is awesome!!!!!'
+    return 'FILLED! is awesome!!!'
 
 @app.route('/api/users/', methods= ['POST'])
 def create_user():
@@ -144,6 +144,8 @@ def create_chat():
     user_id1 = chat_body.get('user_id1')
     user_id2 = chat_body.get('user_id2')
     check = Chat.query.filter_by(user_id1=user_id1, user_id2=user_id2).first()
+    if check is None:
+        check = Chat.query.filter_by(user_id1=user_id2, user_id2=user_id2).first()
     if check is None:
         chat = Chat(
             user_id1= chat_body.get('user_id1'),
