@@ -10,7 +10,7 @@
 
 ### Additional Information
 ### please use the zip version for ios xworkspace and xproject.
-### Already existed users: username and password are both 1,2,..6 (6 usres). Everytime a user log in, random 5 users are pulled from the data base. Right now they are all blank, but if user change information, next time the user appearance will be changed.
+### Already existed users: username and password are both 1,2,..6 (6 usres). Everytime a user log in/ sign up, random 5 users are pulled from the data base. Right now they are all blank, but if user change information, next time the user appearance will be changed.
 
 ### iOS
 
